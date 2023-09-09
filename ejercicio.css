@@ -1,0 +1,21 @@
+.cuadrados {
+    display: flex;
+}
+
+.cuadrado {
+    width: 100px;
+    height: 100px;
+}
+
+.rojo {
+    background-color: red;
+}
+
+.rosa {
+    background-color: pink;
+}
+
+.turquesa {
+    background-color: turquoise;
+}
+

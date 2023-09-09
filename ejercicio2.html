@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <textarea id="texto"  onkeyup="cont(this);" onkeydown="validalongitud();" onkeyup="validalongitud();"  cols="30" rows="10"></textarea>
+    <div>Carateres: <span id="contar"></span></div>
+
+    <script>
+        const texto = document.getElementById('texto');
+        const contar = document.getElementById('contar');
+        var contenidotextarea= "";
+        var numcaracterespermitidos = 200;
+
+        texto.addEventListener('keyup', function cont(){
+            var maximocaracteres = 200;
+            contar.innerText = texto.value.length;
+            var cantidad = texto.value.length;
+            var cuenta = (maximocaracteres - cantidad);
+            if(cuenta < 0) {
+                document.getElementById('contar').innerHTML= '<span style="color: red;"> Ya ingresaste todos los caracteres'
+            } else{
+            document.getElementById('contar').innerHTML = cuenta;
+            }
+            
+        })
+
+        function validalongitud() {
+            numcaracteres= texto.value.length;
+            if(numcaracteres > numcaracterespermitidos){
+                texto.value=contenidotextarea;
+            } else {
+                contenidotextarea = texto.value;
+            }
+        }
+ 
+
+    </script>
+
+
+
+</body>
+</html>
